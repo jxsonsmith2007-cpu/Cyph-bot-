@@ -39,7 +39,6 @@ async def socials(ctx):
     inline=False
 )
     await ctx.send(embed=embed)
-
     embed.set_footer(text="Prefix: ! • Bot made by Sofflyze")
 
 @bot.event
