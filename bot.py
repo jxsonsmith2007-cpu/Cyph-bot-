@@ -41,7 +41,7 @@ async def socials(ctx):
     await ctx.send(embed=embed)
 
     embed.set_footer(text="Prefix: ! • Bot made by Sofflyze")
-    await ctx.send(embed=embed)
+
 @bot.event
 async def on_message(message):
     if message.author.bot:
