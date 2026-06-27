@@ -38,12 +38,12 @@ async def socials(ctx):
 
 @bot.command()
 async def help(ctx):
-embed = discord.Embed(
-title=“📖 Commands”,
-color=discord.Color.blue()
-)
+    embed = discord.Embed(
+        title="📖 Commands",
+        color=discord.Color.blue()
+    )
 
-embed.add_field(
+    embed.add_field(
     name="ℹ️ Info",
     value=(
         "`!ping` — Bot latency\n"
@@ -53,8 +53,8 @@ embed.add_field(
         "`!socials` — Cyph's TikTok & YouTube"
     ),
     inline=False
-)
-embed.add_field(
+    )
+    embed.add_field(
     name="🎮 Games",
     value=(
         "`!coinflip` — Flip a coin\n"
@@ -64,8 +64,8 @@ embed.add_field(
         "`!guess` — Guess a number"
     ),
     inline=False
-)
-embed.add_field(
+    )
+    embed.add_field(
     name="📊 Stats",
     value=(
         "`!iq [@user]` — IQ test (1-300)\n"
@@ -77,8 +77,8 @@ embed.add_field(
         "`!rate <thing>` — Rate anything"
     ),
     inline=False
-)
-embed.add_field(
+    )
+    embed.add_field(
     name="😂 Fun",
     value=(
         "`!roast @user` — Roast someone\n"
@@ -90,9 +90,10 @@ embed.add_field(
         "`!meme` — Random meme"
     ),
     inline=False
-)
-embed.set_footer(text="Prefix: ! • Bot made by Sofflyze")
-await ctx.send(embed=embed)
+    )
+    
+    embed.set_footer(text="Prefix: ! • Bot made by Sofflyze")
+    await ctx.send(embed=embed)
 @bot.event
 async def on_message(message):
     if message.author.bot:
