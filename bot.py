@@ -47,7 +47,7 @@ async def on_message(message):
         "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
     )
     elif content in ["settings", "game settings"]:
-    await message.channel.send(
+        await message.channel.send(
         "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
     elif content in [
@@ -58,7 +58,7 @@ async def on_message(message):
     "fleasion sensitivity",
     "fleasion hitsounds"
 ]:
-    await message.channel.send(
+        await message.channel.send(
         "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\nhttps://discord.com/channels/1277694157481185320/1490445210948472842"
     )
     await bot.process_commands(message)
