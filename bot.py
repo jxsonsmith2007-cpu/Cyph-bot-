@@ -1,5 +1,4 @@
 import os
-import random
 import discord
 from discord.ext import commands
 
@@ -10,36 +9,30 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix=”!”, intents=intents)
 
-BLUE = discord.Color.blue()
-
 @bot.event
 async def on_ready():
 print(f”Logged in as {bot.user}”)
 
 @bot.command()
 async def ping(ctx):
-embed = discord.Embed(
-title=“🏓 Pong!”,
-description=f”Latency: {round(bot.latency * 1000)}ms”,
-color=BLUE
-)
-await ctx.send(embed=embed)
+await ctx.send(“🏓 Pong!”)
 
 @bot.command()
 async def socials(ctx):
 embed = discord.Embed(
 title=“📱 Cyph Socials”,
-color=BLUE
+color=discord.Color.blue()
+)
+
+embed.add_field(
+    name="TikTok",
+    value="https://www.tiktok.com/@7cyph?_r=1&_t=ZS-97WHJqf8Dyx",
+    inline=False
 )
 embed.add_field(
-name=“TikTok”,
-value=“https://www.tiktok.com/@7cyph?_r=1&_t=ZS-97WHJqf8Dyx”,
-inline=False
-)
-embed.add_field(
-name=“YouTube”,
-value=“https://youtube.com/@7cyph?si=xKPkoINe0_EzP2NU”,
-inline=False
+    name="YouTube",
+    value="https://youtube.com/@7cyph?si=xKPkoINe0_EzP2NU",
+    inline=False
 )
 await ctx.send(embed=embed)
 
@@ -51,13 +44,11 @@ return
 content = message.content.lower()
 if content in ["sens", "sensitivity"]:
     await message.channel.send(
-        "🎯 You can check out Cyph's sensitivity here:\n"
-        "https://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
+        "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
     )
 elif content in ["settings", "game settings"]:
     await message.channel.send(
-        "⚙️ You can check out Cyph's settings here:\n"
-        "https://discord.com/channels/1277694157481185320/1471329658254393374"
+        "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
 elif content in [
     "fleasion",
@@ -68,8 +59,7 @@ elif content in [
     "fleasion hitsounds"
 ]:
     await message.channel.send(
-        "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\n"
-        "https://discord.com/channels/1277694157481185320/1490445210948472842"
+        "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\nhttps://discord.com/channels/1277694157481185320/1490445210948472842"
     )
 await bot.process_commands(message)
 
