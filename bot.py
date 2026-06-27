@@ -36,6 +36,46 @@ async def socials(ctx):
 )
     await ctx.send(embed=embed)
 
+@bot.command()
+async def coinflip(ctx):
+    import random
+    await ctx.send(f"🪙 {random.choice(['Heads', 'Tails'])}")
+
+@bot.command()
+async def dice(ctx):
+    import random
+    await ctx.send(f"🎲 You rolled {random.randint(1,6)}")
+
+@bot.command(name="8ball")
+async def eightball(ctx, *, question):
+    import random
+    responses = [
+        "✅ Yes",
+        "❌ No",
+        "🤔 Maybe",
+        "🔥 Definitely",
+        "⏳ Ask again later"
+    ]
+    await ctx.send(random.choice(responses))
+
+@bot.command()
+async def avatar(ctx, member: discord.Member = None):
+    member = member or ctx.author
+    await ctx.send(member.display_avatar.url)
+
+@bot.command()
+async def serverinfo(ctx):
+    guild = ctx.guild
+    await ctx.send(
+        f"🏠 Server: {guild.name}\n👥 Members: {guild.member_count}"
+    )
+
+@bot.command()
+async def userinfo(ctx, member: discord.Member = None):
+    member = member or ctx.author
+    await ctx.send(
+        f"👤 User: {member}\n🆔 ID: {member.id}"
+    )
 @bot.event
 async def on_message(message):
     if message.author.bot:
