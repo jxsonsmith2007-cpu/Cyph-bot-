@@ -38,7 +38,7 @@ await ctx.send(embed=embed)
 
 @bot.event
 async def on_message(message):
-if message.author.bot:
+    if message.author.bot:
         return
 
     content = message.content.lower()
