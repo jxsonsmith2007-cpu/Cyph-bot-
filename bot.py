@@ -37,45 +37,62 @@ async def socials(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def coinflip(ctx):
-    import random
-    await ctx.send(f"🪙 {random.choice(['Heads', 'Tails'])}")
+async def help(ctx):
+embed = discord.Embed(
+title=“📖 Commands”,
+color=discord.Color.blue()
+)
 
-@bot.command()
-async def dice(ctx):
-    import random
-    await ctx.send(f"🎲 You rolled {random.randint(1,6)}")
-
-@bot.command(name="8ball")
-async def eightball(ctx, *, question):
-    import random
-    responses = [
-        "✅ Yes",
-        "❌ No",
-        "🤔 Maybe",
-        "🔥 Definitely",
-        "⏳ Ask again later"
-    ]
-    await ctx.send(random.choice(responses))
-
-@bot.command()
-async def avatar(ctx, member: discord.Member = None):
-    member = member or ctx.author
-    await ctx.send(member.display_avatar.url)
-
-@bot.command()
-async def serverinfo(ctx):
-    guild = ctx.guild
-    await ctx.send(
-        f"🏠 Server: {guild.name}\n👥 Members: {guild.member_count}"
-    )
-
-@bot.command()
-async def userinfo(ctx, member: discord.Member = None):
-    member = member or ctx.author
-    await ctx.send(
-        f"👤 User: {member}\n🆔 ID: {member.id}"
-    )
+embed.add_field(
+    name="ℹ️ Info",
+    value=(
+        "`!ping` — Bot latency\n"
+        "`!avatar [@user]` — Show avatar\n"
+        "`!userinfo [@user]` — User info\n"
+        "`!serverinfo` — Server info\n"
+        "`!socials` — Cyph's TikTok & YouTube"
+    ),
+    inline=False
+)
+embed.add_field(
+    name="🎮 Games",
+    value=(
+        "`!coinflip` — Flip a coin\n"
+        "`!dice` — Roll a die\n"
+        "`!8ball <question>` — Magic 8-ball\n"
+        "`!rps <rock/paper/scissors>` — Play vs the bot\n"
+        "`!guess` — Guess a number"
+    ),
+    inline=False
+)
+embed.add_field(
+    name="📊 Stats",
+    value=(
+        "`!iq [@user]` — IQ test (1-300)\n"
+        "`!love @user1 @user2` — Love meter\n"
+        "`!ship @user1 @user2` — Compatibility\n"
+        "`!sus @user` — Sus level\n"
+        "`!clown @user` — Clown level\n"
+        "`!simp @user` — Simp level\n"
+        "`!rate <thing>` — Rate anything"
+    ),
+    inline=False
+)
+embed.add_field(
+    name="😂 Fun",
+    value=(
+        "`!roast @user` — Roast someone\n"
+        "`!compliment @user` — Compliment someone\n"
+        "`!fight @user1 @user2` — Simulate a fight\n"
+        "`!hack @user` — Hack someone (fake)\n"
+        "`!joke` — Random joke\n"
+        "`!fact` — Random fact\n"
+        "`!meme` — Random meme"
+    ),
+    inline=False
+)
+embed.set_footer(text="Prefix: ! • Bot made by Sofflyze")
+await ctx.send(embed=embed)
 @bot.event
 async def on_message(message):
     if message.author.bot:
