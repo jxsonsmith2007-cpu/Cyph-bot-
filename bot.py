@@ -11,11 +11,11 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-print(f”Logged in as {bot.user}”)
+print(f"Logged in as {bot.user}")
 
 @bot.command()
 async def ping(ctx):
-await ctx.send(“🏓 Pong!”)
+await ctx.send("🏓 Pong!")
 
 @bot.command()
 async def socials(ctx):
