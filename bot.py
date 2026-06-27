@@ -20,21 +20,21 @@ async def ping(ctx):
 @bot.command()
 async def socials(ctx):
     embed = discord.Embed(
-title="📱 Cyph Socials",
-color=discord.Color.blue()
-)
+        title="📱 Cyph Socials",
+        color=discord.Color.blue()
+    )
 
-embed.add_field(
+    embed.add_field(
     name="TikTok",
     value="https://www.tiktok.com/@7cyph?_r=1&_t=ZS-97WHJqf8Dyx",
     inline=False
 )
-embed.add_field(
+    embed.add_field(
     name="YouTube",
     value="https://youtube.com/@7cyph?si=xKPkoINe0_EzP2NU",
     inline=False
 )
-await ctx.send(embed=embed)
+    await ctx.send(embed=embed)
 
 @bot.event
 async def on_message(message):
