@@ -55,8 +55,12 @@ async def on_message(message):
         await message.channel.send(
         "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
-    elif content in ["fleasion", "flea", "fleasion settings", "fleasion sens", "fleasion sensitivity", "fleasion hitsounds"]:
-]:
+    elif any(word in content for word in [
+    "fleasion",
+    "flea",
+    "hitsound",
+    "sens"
+]):
         await message.channel.send(
         "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\nhttps://discord.com/channels/1277694157481185320/1490445210948472842"
     )
