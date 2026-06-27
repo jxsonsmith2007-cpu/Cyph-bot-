@@ -15,11 +15,11 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-await ctx.send("🏓 Pong!")
+    await ctx.send("🏓 Pong!")
 
 @bot.command()
 async def socials(ctx):
-embed = discord.Embed(
+    embed = discord.Embed(
 title="📱 Cyph Socials",
 color=discord.Color.blue()
 )
@@ -39,9 +39,9 @@ await ctx.send(embed=embed)
 @bot.event
 async def on_message(message):
 if message.author.bot:
-return
+        return
 
-content = message.content.lower()
+    content = message.content.lower()
 if content in ["sens", "sensitivity"]:
     await message.channel.send(
         "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
@@ -61,6 +61,6 @@ elif content in [
     await message.channel.send(
         "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\nhttps://discord.com/channels/1277694157481185320/1490445210948472842"
     )
-await bot.process_commands(message)
+    await bot.process_commands(message)
 
 bot.run(TOKEN)
