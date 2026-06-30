@@ -47,11 +47,11 @@ async def on_message(message):
         return
 
     content = message.content.lower()
-    if "sens" in content or "sensitivity" in content:
+    if "cyph sens" in content or "cyph sensitivity" in content or "cyph's sensitivity" in content or "cyph's sens" in content:
         await message.channel.send(
         "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
     )
-    elif "settings" in content:
+    elif "cyph settings" in content or "cyph's settings" in content:
         await message.channel.send(
         "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
