@@ -55,6 +55,13 @@ async def on_message(message):
         await message.channel.send(
         "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
+    elif any(phrase in content for phrase in [
+    "get roles",
+    "roles",
+    "role menu",
+    "how can i get roles",
+    "where can i get roles"
+]):
     elif any(word in content for word in [
     "fleasion",
     "flea",
