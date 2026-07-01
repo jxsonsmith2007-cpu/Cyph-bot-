@@ -47,7 +47,14 @@ async def on_message(message):
         return
 
     content = message.content.lower()
-    if "cyph sens" in content or "cyph sensitivity" in content:
+    if any(phrase in content for phrase in [
+    "cyph sens",
+    "cyph's sens",
+    "cyphs sens",
+    "cyph sensitivity",
+    "cyph's sensitivity",
+    "cyphs sensitivity"
+]):
         await message.channel.send(
         "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
     )
