@@ -70,7 +70,13 @@ async def on_message(message):
     "fleasion",
     "flea",
     "hitsound",
-    "fleas"
+    "fleas",
+    "fleasion settings",
+    "fleasion's settings",
+    "fleasions settings",
+    "fleasion sensitivity",
+    "fleasion's sensitivity",
+    "fleasions sensitivity"
 ]):
         await message.channel.send(
         "🎧 You can check out Fleasion's settings, sensitivity and hit sounds here:\nhttps://discord.com/channels/1277694157481185320/1490445210948472842"
