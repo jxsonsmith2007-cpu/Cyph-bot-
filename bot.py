@@ -51,7 +51,11 @@ async def on_message(message):
         await message.channel.send(
         "🎯 You can check out Cyph's sensitivity here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374/1505281063180701736"
     )
-    elif "cyph settings" in content:
+    elif any(phrase in content for phrase in [
+    "cyph settings",
+    "cyph's settings",
+    "cyphs settings"
+]):
         await message.channel.send(
         "⚙️ You can check out Cyph's settings here:\nhttps://discord.com/channels/1277694157481185320/1471329658254393374"
     )
